@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Generated Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <br>
+    <br>
+    <h1>Your Generated Content</h1>
+    
+    <h2 style="font-size: 18px">Your Entered Prompt: {{ prompt }}</h2>
+
+
+    <div class="video-container">
+        <h2>Videos</h2>
+        {% for video in video_paths %}
+        <video controls>
+            <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
+        </video>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <div class="image-container">
+        <h2>Images</h2>
+        {% for image in image_paths %}
+        <img src="{{ url_for('static', filename=image) }}" alt="Generated Image">
+        {% endfor %}
+    </div>
+
+
+    <br>
+    <a href="/logout">Logout</a>
+</body>
+</html>

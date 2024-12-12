@@ -1,0 +1,6 @@
+torch
+diffusers
+Flask
+sqlite3
+accelerate
+imageio[ffmpeg]
