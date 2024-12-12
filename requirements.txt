@@ -1,6 +1,6 @@
 torch
 diffusers
-Flask
-sqlite3
+transformers
 accelerate
 imageio[ffmpeg]
+flask
