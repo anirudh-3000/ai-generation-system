@@ -16,7 +16,7 @@ class CFG:
     image_gen_model_id = "runwayml/stable-diffusion-v1-5"  # Model ID for Image generation
     image_gen_size = (512, 512)  # Can lower the size for speed
     image_gen_guidance_scale = 7
-    prompt_dataset_size = 1  # Number of images/videos to generate
+    prompt_dataset_size = 5  # Number of images/videos to generate
     video_gen_model_id = "damo-vilab/text-to-video-ms-1.7b"  # Model ID for video generation
     video_gen_steps = 5
     video_duration_seconds = 3
