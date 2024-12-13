@@ -47,7 +47,7 @@ The AI Video and Image Generation System allows users to generate motivational v
   - If the content
 * Generation of your content i.e. 5 videos and 5 images takes place.
 * Generated content is saved as:
-- Videos as .mp4 files.
+ - Videos as .mp4 files.
 - Images as .png files.
 * Content is then stored in a directory named generated_content/<user_id>/.
 
