@@ -17,7 +17,3 @@ CREATE TABLE IF NOT EXISTS user_activity (
     FOREIGN KEY (user_id) REFERENCES user_content (user_id)
 );
 
-select * from user_content;
-
-select * from user_activity
-
