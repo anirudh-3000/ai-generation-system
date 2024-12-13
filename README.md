@@ -81,7 +81,8 @@ The AI Video and Image Generation System allows users to generate motivational v
 * If the content is still processing, following message will be shown: "Your content is being generated. Please check back later."
 
 ## Setup Instructions
-Run the following commands to use the system.
+Run the following commands to use the system. Make sure that Git is installed in your path (open your terminal from where 'Git' folder is located). Also make sure Precompiled Binaries for Sqlite3 is installed and its folder path is added to you System variables.
+
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/anirudh-3000/ai-generation-system
