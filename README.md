@@ -41,7 +41,7 @@ The AI Video and Image Generation System allows users to generate motivational v
 
 ## System overview
 ### 1. Text-to-Video and Text-to-Image Generation
-* Running the main file carries out the main functionalities for content's generation.
+* Running the main file main.py carries out the main functionalities for content's generation.
 * After running the main file, user will have fill two input fields, one for prompt and another for notification time.
 * After entering a desired prompt, a unique user id is generated.
 * After generation of unique id, user will have to enter a specific notification time in HH:MM format.
@@ -57,18 +57,29 @@ The AI Video and Image Generation System allows users to generate motivational v
 * Content is then stored in a directory named generated_content/<user_id>/.
 
 ### 2. Storing and Managing Content:
-An SQLite Database with the following tables is maintained: user_content and user_activity
-1. user_content has following fields:
- - user_id: unique identifier for the user
- - prompt: text provided by the user
- - video_paths: string of file paths (paths separated by commas) to the generated videos
- - image_paths: list of file paths (paths separated by commas) to the generated images
- - status: "Processing" or "Completed"
- - generated_at: timestamp of content generation
-* When user fills the both input fields, a unique user id is generated and generation starts following fields are updated: user_
-* Once the generation is complete:
-Mark the status as "Completed" in the database.
-Notify the user that their content is ready (via email or console output) at specified time.
+* An SQLite Database with the following tables is maintained: user_content and user_activity
+* user_content has following fields:
+  - user_id: unique identifier for the user
+  - prompt: text provided by the user
+  - video_paths: string of file paths (paths separated by commas) to the generated videos
+  - image_paths: list of file paths (paths separated by commas) to the generated images
+  - status: "Processing" or "Completed"
+  - generated_at: timestamp of content generation
+* When user fills the both input fields, following fields are updated immediately: user_id, prompt, status (marked as 'processing').
+* After content is generated following fields are updated: video_paths, image_paths, status (marked as 'completed'), generated_at.
+* user_activity has following fields, to log every user login attempt and content view in the database.
+  - activity_id
+  - user_id
+  - activity (content generated, login attempt, content view)
+  - timestamp (timestamp of corresponding activity)
+
+### 3. Web Page Display
+* A Web page is created using Flask. Running the app.py starts the web page interface.
+* The page allows user to log in using the unique user id.
+* If user's content is generated, the videos and images are shown.
+* If user enters an incorrect user id, following message will be shown: "User not found. Please check the User ID."
+* If the content is still processing, following message will be shown: "Your content is being generated. Please check back later."
+
 ## Setup Instructions
 ### 1. Clone the Repository
 ```bash
