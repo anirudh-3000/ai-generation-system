@@ -81,6 +81,7 @@ The AI Video and Image Generation System allows users to generate motivational v
 * If the content is still processing, following message will be shown: "Your content is being generated. Please check back later."
 
 ## Setup Instructions
+Run the following commands to use the system.
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/anirudh-3000/ai-generation-system
@@ -89,19 +90,19 @@ git clone https://github.com/anirudh-3000/ai-generation-system
 cd ai-generation-system
 ```
 
-###2. Install Dependencies
+### 2. Install Dependencies
 Install the required Python libraries using the requirements.txt file:
 ```bash
 pip install -r requirements.txt
 ```
 
-###3. Set Up the Database
+### 3. Set Up the Database
 Run the schema.sql file to create the necessary database tables:
 ```bash
 sqlite3 content_generation.db < schema.sql
 ```
 
-###4. Start the System
+### 4. Start the System
 Run the two main components:
 
 a. Generate Content
