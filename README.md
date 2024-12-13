@@ -35,8 +35,8 @@ The AI Video and Image Generation System allows users to generate motivational v
 * Programming Language: Python
 * Web Framework: Flask 
 * AI Tools:
-- Diffusers Library (for video generation)
-- Stable Diffusion (for image generation)
+  - Damo vilab's "damo-vilab/text-to-video-ms-1.7b" model. (for video generation)
+  - RunwayML's "stable-diffusion-v1-5" model. (for image generation)
 * Database: SQLite
 
 ## System overview
