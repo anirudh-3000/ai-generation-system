@@ -41,7 +41,7 @@ The AI Video and Image Generation System allows users to generate motivational v
 
 ## System overview
 ### 1. Text-to-Video and Text-to-Image Generation
-* Running the main file carries out the main functionalities for our content's generation.
+* Running the main file carries out the main functionalities for content's generation.
 * After running the main file, user will have fill two input fields, one for prompt and another for notification time.
 * After entering a desired prompt, a unique user id is generated.
 * After generation of unique id, user will have to enter a specific notification time in HH:MM format.
@@ -57,8 +57,8 @@ The AI Video and Image Generation System allows users to generate motivational v
 * Content is then stored in a directory named generated_content/<user_id>/.
 
 ### 2. Storing and Managing Content:
-* An SQLite Database with the following tables is maintained:
-1. User_Content
+An SQLite Database with the following tables is maintained: user_content and user_activity
+1. user_content has following fields:
  - user_id: unique identifier for the user
  - prompt: text provided by the user
  - video_paths: string of file paths (paths separated by commas) to the generated videos
