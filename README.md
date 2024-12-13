@@ -40,26 +40,32 @@ The AI Video and Image Generation System allows users to generate motivational v
 * Database: SQLite
 
 ## System overview
-###1. Text-to-Video and Text-to-Image Generation
+### 1. Text-to-Video and Text-to-Image Generation
 * Running the main file carries out the main functionalities for our content's generation.
-* After running the main file, you will have to enter your prompt.
-* After entering your prompt, you will have to enter a specific notification time in HH:MM format.
-  - If the content
-* Generation of your content i.e. 5 videos and 5 images takes place.
-* Generated content is saved as:
- - Videos as .mp4 files.
-- Images as .png files.
+* After running the main file, user will have fill two input fields, one for prompt and another for notification time.
+* After entering a desired prompt, a unique user id is generated.
+* After generation of unique id, user will have to enter a specific notification time in HH:MM format.
+  - The notification is in form a simple print statement that will be printed on your terminal.
+  - The notification will be printed only after the generation of whole of the content (5 videos and 5 images) is completed.
+  - If the content is generated before user specified time: Notification will be printed at user specified time.
+  - If the content is not generated before user specified time: Notification will be printed immediately after content is generated.
+  - If user leaves notification time field empty: Notification will be printed immediately after content is generated.
+* After filling both fields, content generation starts.
+* After generation is completed, generated content is saved as:
+  - Videos as .mp4 files.
+  - Images as .png files.
 * Content is then stored in a directory named generated_content/<user_id>/.
 
-###2. Storing and Managing Content:
-* An SQLite Database with the following structure:
-- user_id: unique identifier for the user
-- prompt: text provided by the user
-- video_paths: string of file paths (paths separated by commas) to the generated videos
-- image_paths: list of file paths (paths separated by commas) to the generated images
-- status: "Processing" or "Completed"
-- generated_at: timestamp of content generation
-* When user enters the prompt, a unique user id is generated and generation starts following fields are updated: user_
+### 2. Storing and Managing Content:
+* An SQLite Database with the following tables is maintained:
+1. User_Content
+ - user_id: unique identifier for the user
+ - prompt: text provided by the user
+ - video_paths: string of file paths (paths separated by commas) to the generated videos
+ - image_paths: list of file paths (paths separated by commas) to the generated images
+ - status: "Processing" or "Completed"
+ - generated_at: timestamp of content generation
+* When user fills the both input fields, a unique user id is generated and generation starts following fields are updated: user_
 * Once the generation is complete:
 Mark the status as "Completed" in the database.
 Notify the user that their content is ready (via email or console output) at specified time.
