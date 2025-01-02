@@ -1,7 +1,7 @@
 # AI Generation System
 
 ## Overview
-Welcome to my AI Video and Image Generation System Assignment! This project is designed to demonstrate the integration of advanced AI tools to create motivational videos and images based on user-provided prompts. Below, you’ll find detailed information about the project’s functionality, setup, and usage.
+This project is designed to demonstrate the integration of advanced AI tools to create motivational videos and images based on user-provided prompts. Below, you’ll find detailed information about the project’s functionality, setup, and usage.
 
 ## Project Description
 The AI Video and Image Generation System allows users to generate motivational videos and images from text prompts. The system leverages AI tools for content creation and provides an intuitive web interface for users to access their content. Users are notified when their content is ready.
